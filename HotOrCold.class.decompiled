@@ -1,0 +1,57 @@
+import java.io.PrintStream;
+
+public class HotOrCold { public HotOrCold() {} private static String flag_format = "flag{%s}\n";
+  private static String PASSCODE = "Java coffee";
+  
+  public static void main(String[] paramArrayOfString) {
+    System.out.print("Let's play hot or cold! What is the passcode?\n>> ");
+    java.util.Scanner localScanner = new java.util.Scanner(System.in);
+    String str1 = localScanner.nextLine();
+    if (str1.equals(PASSCODE)) {
+      char[] arrayOfChar = new char[32];
+      translate_input(str1, arrayOfChar);
+      String str2 = new String(arrayOfChar);
+      System.out.println(String.format("%n%s IS \"hot\"!! Haha, get it? Anyway, here's the flag:", new Object[] { str1 }));
+      System.out.println(String.format(flag_format, new Object[] { str2 }));
+    }
+    else {
+      System.out.println("Too cold!");
+    }
+  }
+  
+  private static void translate_input(String paramString, char[] paramArrayOfChar)
+  {
+    paramArrayOfChar[29] = ((char)(paramString.charAt(6) - '?'));
+    paramArrayOfChar[17] = ((char)(paramString.charAt(2) - '\027'));
+    paramArrayOfChar[26] = ((char)(paramString.charAt(9) + '\003'));
+    paramArrayOfChar[2] = ((char)(paramString.charAt(10) - '\006'));
+    paramArrayOfChar[19] = ((char)(paramString.charAt(1) + '\007'));
+    paramArrayOfChar[8] = ((char)(paramString.charAt(8) + '\016'));
+    paramArrayOfChar[7] = ((char)(paramString.charAt(1) + '\030'));
+    paramArrayOfChar[16] = ((char)(paramString.charAt(0) + '$'));
+    paramArrayOfChar[1] = ((char)(paramString.charAt(8) + '\016'));
+    paramArrayOfChar[11] = ((char)(paramString.charAt(4) + '\020'));
+    paramArrayOfChar[12] = ((char)(paramString.charAt(7) + '\006'));
+    paramArrayOfChar[9] = ((char)(paramString.charAt(8) - '3'));
+    paramArrayOfChar[14] = ((char)(paramString.charAt(9) - '\006'));
+    paramArrayOfChar[20] = ((char)(paramString.charAt(1) - '.'));
+    paramArrayOfChar[18] = ((char)(paramString.charAt(5) + '\021'));
+    paramArrayOfChar[3] = ((char)(paramString.charAt(9) + '\004'));
+    paramArrayOfChar[10] = ((char)(paramString.charAt(10) - '\002'));
+    paramArrayOfChar[27] = ((char)(paramString.charAt(4) + '?'));
+    paramArrayOfChar[30] = ((char)(paramString.charAt(6) - '\003'));
+    paramArrayOfChar[24] = ((char)(paramString.charAt(0) + '+'));
+    paramArrayOfChar[22] = ((char)(paramString.charAt(4) + 'S'));
+    paramArrayOfChar[15] = ((char)(paramString.charAt(7) + '\003'));
+    paramArrayOfChar[6] = ((char)(paramString.charAt(2) - '\024'));
+    paramArrayOfChar[31] = ((char)(paramString.charAt(6) - '<'));
+    paramArrayOfChar[5] = ((char)(paramString.charAt(3) - '\002'));
+    paramArrayOfChar[21] = ((char)(paramString.charAt(6) - '\020'));
+    paramArrayOfChar[0] = ((char)(paramString.charAt(10) + '\004'));
+    paramArrayOfChar[28] = ((char)(paramString.charAt(5) + '\r'));
+    paramArrayOfChar[23] = ((char)(paramString.charAt(9) - '5'));
+    paramArrayOfChar[25] = ((char)(paramString.charAt(7) + '\016'));
+    paramArrayOfChar[4] = ((char)(paramString.charAt(2) - '\003'));
+    paramArrayOfChar[13] = ((char)(paramString.charAt(8) - '\002'));
+  }
+}
